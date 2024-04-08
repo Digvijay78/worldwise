@@ -1,7 +1,16 @@
+import Map from "../component/Map";
+import Sidebar from "../component/Sidebar"
+import styles from "./AppLayout.module.css";
+
+
 
 const AppLayout = () => {
+   
   return (
-    <div>AppLayout</div>
+    <div className= {styles.app} >
+        <Sidebar />
+        <Map />
+        </div>
   )
 }
 

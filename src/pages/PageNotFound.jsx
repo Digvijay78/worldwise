@@ -1,11 +1,7 @@
-import NavPage from "../component/NavPage"
-
-const PageNotFound = () => {
+export default function PageNotFound() {
   return (
     <div>
-      <NavPage />
-      PageNotFound</div>
-  )
+      <h1>Page not found 😢</h1>
+    </div>
+  );
 }
-
-export default PageNotFound
