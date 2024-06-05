@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
@@ -14,6 +14,7 @@ import Form from "./component/Form"
 
 const BASE_URL = "http://localhost:9000";
 
+// hello 
 function App() {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -26,7 +27,7 @@ function App() {
         const data = await res.json();
         setCities(data);
       } catch {
-        alert("There was an error loadinf data");
+        alert("There was an error loading data");
       } finally {
         setIsLoading(false);
       }
@@ -44,7 +45,8 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/app" element={<AppLayout />}>
-            <Route index element={<CityList cities = {cities} isLoading = {isLoading} />} />
+            <Route index element={<Navigate replace to ="cities" />} />
+
             <Route path="/app/cities" element={<CityList cities={cities} isLoading ={isLoading} />} />
 
             <Route path ="/app/cities/:id" element ={<City />} />

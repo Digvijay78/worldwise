@@ -10,7 +10,6 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 const CityITem = ({city}) => {
-  console.log(city);
 
   const {cityName , emoji , date, id , position} = city
 
